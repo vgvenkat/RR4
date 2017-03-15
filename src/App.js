@@ -1,17 +1,14 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import './App.css'
-const Home = (props) => {
-    console.log(props);
-    return <h1>Home</h1>
-}
+const Home = (props) => <h1>Home</h1>
+
 
 const Links = () => (
     <nav>
-        <Link to="/">Home</Link>
-        <Link to={{pathname:"/about"}}>About</Link>
-        <Link replace to="/children">Children</Link>
-        
+        <NavLink exact activeClassName="active" to="/">Home</NavLink>
+        <NavLink to={{pathname:"/about"}}>About</NavLink>
+        <NavLink replace to="/children">Children</NavLink>
     </nav>
 )
 const App = () => (
